@@ -28,6 +28,9 @@ defmodule JazidaServerWeb.Router do
     resources "/plates", PlateController, except: [:new, :edit]
     resources "/materials", MaterialController, except: [:new, :edit]
     resources "/loads", LoadController, except: [:new, :edit]
+
+    post "/signature", SignatureController, :upload
+    get "/signature/:filename", SignatureController, :show
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

@@ -4,7 +4,8 @@ defmodule JazidaServer.Clients.Plate do
 
   schema "plates" do
     field :name, :string
-    field :client_id, :id
+
+    belongs_to :client, JazidaServer.Clients.Client
 
     timestamps(type: :utc_datetime)
   end
@@ -12,7 +13,7 @@ defmodule JazidaServer.Clients.Plate do
   @doc false
   def changeset(plate, attrs) do
     plate
-    |> cast(attrs, [:name])
-    |> validate_required([:name])
+    |> cast(attrs, [:name, :client_id])
+    |> validate_required([:name, :client_id])
   end
 end

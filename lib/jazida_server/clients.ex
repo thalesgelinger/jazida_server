@@ -114,7 +114,7 @@ defmodule JazidaServer.Clients do
 
   """
   def list_plates do
-    Repo.all(Plate)
+    Repo.all(Plate) |> Repo.preload(:client)
   end
 
   @doc """
@@ -149,6 +149,10 @@ defmodule JazidaServer.Clients do
     %Plate{}
     |> Plate.changeset(attrs)
     |> Repo.insert()
+    |> case do
+      {:ok, plate} -> {:ok, Repo.preload(plate, :client)}
+      error -> error
+    end
   end
 
   @doc """

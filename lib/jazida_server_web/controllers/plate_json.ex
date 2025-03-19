@@ -18,7 +18,8 @@ defmodule JazidaServerWeb.PlateJSON do
   defp data(%Plate{} = plate) do
     %{
       id: plate.id,
-      name: plate.name
+      name: plate.name,
+      client_id: plate.client.id
     }
   end
 end

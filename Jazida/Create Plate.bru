@@ -1,0 +1,19 @@
+meta {
+  name: Create Plate
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseURL}}/api/plates
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "client": {
+      "name": "José"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Create Client
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseURL}}/api/clients
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "client": {
+      "name": "Bartolomeu"
+    }
+  }
+}

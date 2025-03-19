@@ -1,0 +1,19 @@
+meta {
+  name: Post Materials
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseURL}}/api/materials
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "material": {
+      "name": "Areia"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Create Load
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseURL}}/api/loads
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "load": {
+      "client_id": 1,
+      "plate_id": 1,
+      "material_id": 1,
+      "quantity": 10,
+      "signature_path": "hello"
+    }
+  }
+}

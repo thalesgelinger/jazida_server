@@ -27,6 +27,7 @@ defmodule JazidaServerWeb.Router do
     resources "/clients", ClientController, except: [:new, :edit]
     resources "/plates", PlateController, except: [:new, :edit]
     resources "/materials", MaterialController, except: [:new, :edit]
+    resources "/loads", LoadController, except: [:new, :edit]
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

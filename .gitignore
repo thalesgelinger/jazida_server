@@ -35,3 +35,5 @@ jazida_server-*.tar
 npm-debug.log
 /assets/node_modules/
 
+
+/uploads/

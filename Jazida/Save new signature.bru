@@ -4,8 +4,13 @@ meta {
   seq: 10
 }
 
-post {
+get {
   url: {{baseURL}}/api/signature
-  body: none
+  body: multipartForm
   auth: none
+}
+
+body:multipart-form {
+  : 
+  image: @file(/Users/thalesgelinger/Downloads/coolify-logo.png)
 }

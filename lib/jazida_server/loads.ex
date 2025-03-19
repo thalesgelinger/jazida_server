@@ -53,6 +53,10 @@ defmodule JazidaServer.Loads do
     %Load{}
     |> Load.changeset(attrs)
     |> Repo.insert()
+    |> case do
+      {:ok, load} -> {:ok, Repo.preload(load, [:client, :material, :plate])}
+      error -> error
+    end
   end
 
   @doc """

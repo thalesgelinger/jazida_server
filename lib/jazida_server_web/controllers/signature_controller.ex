@@ -13,7 +13,7 @@ defmodule JazidaServerWeb.SignatureController do
       :ok ->
         conn
         |> put_status(:created)
-        |> json(%{message: "Upload successful", path: "/api/signature/#{uniquer_filename}"})
+        |> json(%{message: "Upload successful", path: "/signature/#{uniquer_filename}"})
 
       {:error, reason} ->
         conn

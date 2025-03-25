@@ -21,6 +21,7 @@ defmodule JazidaServerWeb.LoadJSON do
       quantity: load.quantity,
       signature_path: load.signature_path,
       inserted_at: load.inserted_at,
+      payment_method: load.payment_method,
       client: load.client.name,
       plate: load.plate.name,
       material: load.material.name

@@ -1,0 +1,20 @@
+meta {
+  name: Delete Plate
+  type: http
+  seq: 11
+}
+
+delete {
+  url: {{baseURL}}/api/plates/14
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "plate": {
+      "name": "LALA1234",
+      "client_id": 2
+    }
+  }
+}

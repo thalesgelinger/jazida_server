@@ -18,7 +18,10 @@ defmodule JazidaServer.Loads do
 
   """
   def list_loads do
-    Repo.all(Load) |> Repo.preload([:client, :material, :plate])
+    Load
+    |> order_by(desc: :inserted_at)
+    |> Repo.all()
+    |> Repo.preload([:client, :material, :plate])
   end
 
   @doc """
@@ -50,6 +53,8 @@ defmodule JazidaServer.Loads do
 
   """
   def create_load(attrs \\ %{}) do
+    attrs = Map.put(attrs, "updated_at", DateTime.utc_now())
+
     %Load{}
     |> Load.changeset(attrs)
     |> Repo.insert()

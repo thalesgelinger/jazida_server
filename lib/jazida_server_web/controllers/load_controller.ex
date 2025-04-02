@@ -1,6 +1,7 @@
 defmodule JazidaServerWeb.LoadController do
   use JazidaServerWeb, :controller
 
+  alias JazidaServer.Notification
   alias JazidaServer.Loads
   alias JazidaServer.Loads.Load
 
@@ -13,6 +14,8 @@ defmodule JazidaServerWeb.LoadController do
 
   def create(conn, %{"load" => load_params}) do
     with {:ok, %Load{} = load} <- Loads.create_load(load_params) do
+      Notification.push(load)
+
       conn
       |> put_status(:created)
       |> put_resp_header("location", ~p"/api/loads/#{load}")
